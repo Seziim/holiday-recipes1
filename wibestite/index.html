@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новогодние рецепты для семьи</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="snowflakes" aria-hidden="true">
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+    </div>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Главная</a></li>
+                <li><a href="#recipes">Рецепты</a></li>
+                <li><a href="#news">Новости</a></li>
+                <li><a href="#about">О нас</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Новогодние рецепты для всей семьи</h1>
+                <p>Создавайте праздничное настроение вместе с нашими рецептами!</p>
+                <div class="countdown">
+                    <div class="countdown-item">
+                        <span id="days">00</span>
+                        <span>Дней</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="hours">00</span>
+                        <span>Часов</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="minutes">00</span>
+                        <span>Минут</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="seconds">00</span>
+                        <span>Секунд</span>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#recipes" class="hero-btn">Смотреть рецепты</a>
+                    <a href="#news" class="hero-btn">Новости</a>
+                </div>
+                <div class="decorations">
+                    <div class="christmas-tree"></div>
+                    <div class="gifts"></div>
+                    <div class="bells"></div>
+                </div>
+            </div>
+        </section>
+
+      <!----  <section id="recipes" class="recipes">
+            <h2>Праздничные рецепты</h2>
+            <div class="recipe-grid">
+                <article class="recipe-card">
+                    <img src="images/olivier.jpg" alt="Оливье">
+                    <h3>Салат Оливье</h3>
+                    <p>Классический новогодний салат</p>
+                    <button class="recipe-btn">Смотреть рецепт</button>
+                </article>
+                <article class="recipe-card">
+                    <img src="images/mandarins.jpg" alt="Мандарины в шоколаде">
+                    <h3>Мандарины в шоколаде</h3>
+                    <p>Вкусный праздничный десерт</p>
+                    <button class="recipe-btn">Смотреть рецепт</button>
+                </article>
+                <article class="recipe-card">
+                    <img src="images/ginger.jpg" alt="Имбирное печенье">
+                    <h3>Имбирное печенье</h3>
+                    <p>Ароматное праздничное печенье</p>
+                    <button class="recipe-btn">Смотреть рецепт</button>
+                </article>
+            </div>
+        </section>!---->
+        </section>
+
+        <section id="recipes" class="recipes">
+            <h2>Новогодние рецепты</h2>
+            
+            <div class="recipe-categories">
+                <button class="category-btn active" onclick="displayRecipesByCategory('all')">Все рецепты</button>
+                <button class="category-btn" onclick="displayRecipesByCategory('Салаты')">Салаты</button>
+                <button class="category-btn" onclick="displayRecipesByCategory('Горячие блюда')">Горячие блюда</button>
+                <button class="category-btn" onclick="displayRecipesByCategory('Десерты')">Десерты</button>
+            </div>
+
+            <div id="recipes-container" class="recipes-container">
+                <!-- Рецепты будут добавлены через JavaScript -->
+            </div>
+        </section>
+
+        <section id="news" class="news">
+            <h2>Новогодние новости</h2>
+            <div id="news-container" class="news-container">
+                <!-- Новости будут добавляться здесь динамически -->
+            </div>
+        </section>
+
+        <section id="comments" class="comments">
+            <h2>Комментарии</h2>
+            <div class="comment-form">
+                <select id="recipe-select" required>
+                    <option value="">Выберите блюдо</option>
+                    <option value="Салат Оливье">Салат Оливье</option>
+                    <option value="Новогодние капкейки">Новогодние капкейки</option>
+                    <option value="Винегрет">Винегрет</option>
+                    <option value="Крабовый салат">Крабовый салат</option>
+                    <option value="Утка с яблоками">Утка с яблоками</option>
+                    <option value="Говядина по-строгановски">Говядина по-строгановски</option>
+                    <option value="Селедка под шубой">Селедка под шубой</option>
+                    <option value="Запеченная рыба">Запеченная рыба</option>
+                    <option value="Курица с грибами">Курица с грибами</option>
+                    <option value="Торт 'Зимняя сказка'">Торт "Зимняя сказка"</option>
+                    <option value="Новогоднее печенье">Новогоднее печенье</option>
+                </select>
+                <input type="text" id="comment-author" placeholder="Ваше имя" required>
+                <textarea id="comment-text" placeholder="Ваш комментарий" required></textarea>
+                <button onclick="addComment()">Добавить комментарий</button>
+            </div>
+            <div id="comments-container">
+                <!-- Комментарии будут добавлены через JavaScript -->
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <h2>О нашем проекте</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="images/about-us.jpeg" alt="Наша команда">
+                </div>
+                <div class="about-text">
+                    <p>Мы собрали лучшие семейные рецепты для создания незабываемого новогоднего настроения!</p>
+                </div>
+            </div>
+            
+            <div class="team">
+                <h3>Наша команда</h3>
+                <div class="team-members">
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <img src="images/author.jpeg" alt="Байболат Мейірбек">
+                        </div>
+                        <div class="member-info">
+                            <h4>Байболат Мейірбек</h4>
+                            <p>Автор проекта</p>
+                            <a href="https://www.instagram.com/bmeirbek.06" target="_blank" class="social-link">
+                                <i class="fab fa-instagram"></i> @bmeirbek.06
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <img src="images/assistant.jpeg" alt="Байболатова Гүлсезім">
+                        </div>
+                        <div class="member-info">
+                            <h4>Байболатова Гүлсезім</h4>
+                            <p>Ассистент проекта</p>
+                            <a href="https://www.instagram.com/q.seziim" target="_blank" class="social-link">
+                                <i class="fab fa-instagram"></i> @q.seziim
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Новогодние рецепты для семьи</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
